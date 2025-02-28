@@ -4,10 +4,31 @@
     box-sizing: border-box;
     font-family: "Roboto", Helvetica, sans-serif;
 
-    --background_body: rgb(224, 224, 224);
+    --header_height: 5rem;
+    --background_body: rgb(250, 250, 250);
     --background_bodyDarker: rgb(100, 100, 100);
     --background_bodyDarkerParagraphic: rgb(120, 120, 120);
     --color_blue: rgb(0, 120, 255);
+    --color_blueDarker: rgb(0, 97, 207);
+    --config_shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar {
+    width: .9rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background_body);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color_blue);
+    border-radius: 1rem;
+    border: 0.125rem solid var(--background_body);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color_blueDarker);
 }
 
 h1,
@@ -19,17 +40,31 @@ body {
     background: var(--background_body);
 }
 
+header {   
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .01);
+    backdrop-filter: blur(.125rem);
+    -webkit-backdrop-filter: blur(1rem);
+    box-shadow: var(--config_shadow);
+}
+
 nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 5rem;
     padding: 3.5rem;
+    height: var(--header_height);
+}
+
+main {
+    margin-top: var(--header_height);
 }
 
 #titleNav {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 2rem;
 }
 
@@ -58,7 +93,7 @@ a>* {
     align-items: center;
     width: 2.5rem;
     height: auto;
-    padding: .25rem;
+    padding: .3rem;
     border: .1rem solid transparent;
     transition: all .5s ease-in-out;
     position: relative;
@@ -81,6 +116,8 @@ a>* {
 .button a:hover {
     color: var(--color_blue);
     border-radius: 1rem;
+    transition: all .5s ease;
+    box-shadow: var(--config_shadow);
 }
 
 .button a:hover::before {
@@ -116,7 +153,8 @@ p {
 h2 {
     letter-spacing: .05rem;
     padding: -1rem;
-    border-bottom: var(--color_blue) solid .15rem;
+    padding-right: .35rem;
+    border-right: var(--color_blue) solid .15rem;
     height: 2rem;
     margin-bottom: .5rem;
 }
@@ -129,6 +167,7 @@ h2 {
     align-items: center;
     padding: 1rem;
     margin: 1.5rem;
+    border-radius: .5rem;
 }
 
 .container p {
@@ -149,12 +188,63 @@ h2 {
     justify-content: center;
     text-transform: uppercase;
     text-align: center;
+    color: var(--background_bodyDarkerParagraphic);
+    padding: .35rem;
     gap: .25rem;
 }
 
 .listLinguages li img {
     width: 3rem;
     height: auto;
+}
+
+.containerIconButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.containerCV {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.containerCV img {
+    width: 1.5rem;
+    height: auto;
+}
+
+.containerCV a {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    box-shadow: var(--config_shadow);
+    transition: all 2s ease;
+}
+
+.containerCV a:hover {
+    background-color: var(--color_blue);
+    transition: all .8s ease;
+}
+
+.containerCV a:hover p {
+    color: white;
+}
+
+.containerCV a:hover img {
+    filter: grayscale(1) brightness(100);
+}
+
+.containerCV a p {
+    color: var(--color_blue);
 }
 
 @keyframes roullete {
