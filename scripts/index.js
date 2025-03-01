@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         containerProjects.appendChild(a);
     }
+    updateTitles();
     let elements = document.querySelectorAll("*");
     seconds = .1;
     for(let element of elements) {
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     setTimeout(() => {
         window.scrollTo(0,0);
-        updateTitles();
     }, 1000);
 });
 
