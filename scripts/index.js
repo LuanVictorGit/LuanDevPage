@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    updateTitles();
-
+document.addEventListener("DOMContentLoaded", async () => {
     let linguages = document.querySelectorAll(".listLinguages li");
     let seconds = 3;
     let top = false;
@@ -13,6 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
             top = true;
         }
     }
+
+    let loadingProjects = document.getElementById("loadingProjects");
+    let containerProjects = document.getElementById("projectsContainer");
+    const response = await fetch("https://api.github.com/users/LuanVictorGit/repos");
+    if (!response.ok) throw new Error(`Erro: ${response.status}`);
+    const data = await response.json();
+    loadingProjects.style.display = "none";
+    for(let i = 0; i < data.length; i++) {
+        let object = data[i];
+        let a = document.createElement("a");
+        a.href = object["clone_url"];
+        a.target = "_blank";
+        a.title = "Visitar Resource";
+
+        let h3 = document.createElement("h3");
+        h3.textContent = object["name"];
+        a.appendChild(h3);
+
+        let p = document.createElement("p");
+        p.textContent = object["description"];
+        a.appendChild(p);
+        containerProjects.appendChild(a);
+    }
+
+    updateTitles();
 });
 
 let typingSpeed = 60;

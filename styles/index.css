@@ -3,7 +3,9 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Roboto", Helvetica, sans-serif;
+}
 
+:root {
     --header_height: 5rem;
     --background_body: rgb(250, 250, 250);
     --background_bodyDarker: rgb(100, 100, 100);
@@ -11,6 +13,22 @@
     --color_blue: rgb(0, 120, 255);
     --color_blueDarker: rgb(0, 97, 207);
     --config_shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.25);
+    --config_shadowLetters: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.containerTitleNav {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    padding: .25rem;
+    text-decoration: none;
+}
+
+.containerTitleNav img {
+    width: 2rem;
+    height: auto;
 }
 
 ::-webkit-scrollbar {
@@ -66,6 +84,8 @@ main {
 #titleNav {
     text-transform: capitalize;
     font-size: 2rem;
+    color: var(--color_blue);
+    text-shadow: var(--config_shadowLetters);
 }
 
 #listButtons {
@@ -247,26 +267,83 @@ h2 {
     color: var(--color_blue);
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: var(--header_height);
+    margin-top: 1rem;
+    background-color: rgb(41, 41, 41);
+}
+
+.containerProjects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projectsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 40rem;
+    padding: 1.5rem;
+}
+
+#projectsContainer a {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    box-shadow: var(--config_shadow);
+    padding: 1.5rem;
+}
+
+#projectsContainer h3 {
+    letter-spacing: .1rem;
+    width: 100%;
+    text-align: left;
+    padding: .25rem;
+    margin-bottom: .15rem;
+    color: var(--background_bodyDarker);
+    border-left: var(--color_blue) .15rem solid;
+}
+
+#projectsContainer p {
+    text-align: left;
+    width: 100%;
+    text-justify: distribute;
+}
+
+footer p {
+    text-transform: capitalize;
+}
+
 @keyframes roullete {
     0% {
-        transform: translateY(-10%);
+        transform: translateY(-2%);
     }
     50% {
-        transform: translateY(10%);
+        transform: translateY(2%);
     }
     100% {
-        transform: translateY(-10%);
+        transform: translateY(-2%);
     }
 }
 
 @keyframes roulleteTop {
     0% {
-        transform: translateY(10%);
+        transform: translateY(2%);
     }
     50% {
-        transform: translateY(-10%);
+        transform: translateY(-2%);
     }
     100% {
-        transform: translateY(10%);
+        transform: translateY(2%);
     }
 }
