@@ -1,7 +1,7 @@
 @media (max-width: 1024px) {
 
     :root {
-        --header_height: 20rem;
+        --header_height: 12rem;
     }
 
     nav {
@@ -9,21 +9,21 @@
     }
 
     #titleNav {
-        font-size: 5rem;
+        font-size: 2.5rem;
     }
 
     .containerTitleNav img {
-        width: 5rem;
+        width: 2.5rem;
         height: auto;
     }
 
     #listButtons {
-        gap: 2.5rem;
+        gap: 1.2rem;
     }
 
     #listButtons li a {
-        width: 6rem;
-        height: 6rem;
+        width: 3rem;
+        height: 3rem;
     }
 
     main {
@@ -35,69 +35,71 @@
     }
 
     #iconPerf {
-        width: 50rem;
-        height: 50rem;
+        width: 22rem;
+        height: 22rem;
     }
 
     .containerCV {
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
     
     .containerCV img {
-        width: 5rem;
+        width: 3.5rem;
         height: auto;
     }
     
     .containerCV a {
-        font-size: 3rem;
+        font-size: 1.8rem;
     }
 
     h2 {
-        font-size: 4rem;
-        border-right: var(--color_blue) 1rem solid;
-        padding: 0;
+        font-size: 1.8rem;
+        border-right: var(--color_blue) .25rem solid;
+        padding: .25rem;
         margin-bottom: 1rem;
+        text-align: center;
     }
 
     .container {
-        margin: 5rem;
+        width: 100vw;
+        margin: 2.5rem;
     }
 
     .container p {
         margin-top: 1.5rem;
-        font-size: 2.5rem;
+        font-size: 1.25rem;
     }
 
     .listLinguages {
         margin: 2.5rem;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
     }
 
     .listLinguages li {
-        font-size: 2.5rem;
+        font-size: 1.25rem;
     }
 
     .listLinguages li img {
-        width: 7rem;
+        width: 3.5rem;
         height: auto;
     }
 
     #projectsContainer {
         margin-top: 2.5 rem;
-        width: 50rem;
+        width: 100vw;
     }
     
     #projectsContainer h3 {
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
     
     #projectsContainer p {
-        font-size: 2.5rem;
+        font-size: 1.25rem;
     }
 
     footer p {
-        font-size: 2.5rem;
+        font-size: 1.3rem;
     }
 }
