@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("https://api.github.com/users/LuanVictorGit/repos");
     if (!response.ok) throw new Error(`Erro: ${response.status}`);
     const data = await response.json();
+    data.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)); //ordenando lista
     loadingProjects.style.display = "none";
-    for(let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         let object = data[i];
         let a = document.createElement("a");
         a.href = object["clone_url"];
@@ -32,10 +33,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         let p = document.createElement("p");
         p.textContent = object["description"];
         a.appendChild(p);
+
         containerProjects.appendChild(a);
     }
-
-    updateTitles();
+    let elements = document.querySelectorAll("*");
+    seconds = .1;
+    for(let element of elements) {
+        if (element.style.animation) continue;
+        element.style.animation = `slideUp ${seconds}s ease-in-out`;
+        seconds+=.05;
+    }
+    setTimeout(() => {
+        window.scrollTo(0,0);
+        updateTitles();
+    }, 1000);
 });
 
 let typingSpeed = 60;
