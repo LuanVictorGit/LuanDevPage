@@ -32,24 +32,29 @@
 
     .containerIconButtons {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100vw;
     }
 
     #iconPerf {
-        width: 22rem;
-        height: 22rem;
+        width: 10.25rem;
+        height: 10.25rem;
     }
 
     .containerCV {
         gap: 1.5rem;
+        flex-direction: row;
     }
     
     .containerCV img {
-        width: 3.5rem;
+        width: 1.5rem;
         height: auto;
     }
     
     .containerCV a {
-        font-size: 1.8rem;
+        font-size: 1.15rem;
     }
 
     h2 {
