@@ -1,100 +1,610 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luan Victor Mariano Chagas | FullStack Developer | Freelancer</title>
-    <meta name="description" content="Luan Victor Mariano Chagas - Desenvolvedor FullStack e Freelancer. Criação de websites, automações e aplicações SaaS personalizadas. Entre em contato para projetos sob medida!">
-    <meta name="keywords" content="Desenvolvedor FullStack, Freelancer, Websites, Automações, SaaS, HTML, CSS, JavaScript, Node.js, Java, Spring Boot, MySQL, Portifólio">
-    <meta name="google-site-verification" content="MwHVNytk6YCCoXwpd-PM05xnly7ioAmMRMa-zK3bmO4" />
-    <link rel="icon" href="./images/icon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="#" title="Voltar ao início" class="containerTitleNav">
-                <h1 id="titleNav">LuanDev</h1>
-                <img src="./images/increase.png" alt="increase">
-            </a>
-            <ul id="listButtons">
-                <li class="button youtubeButton">
-                    <a href="https://www.youtube.com/@luanvictor.mariano" title="acessar youtube"  target="_blank">
-                        <img class="imageButton" src="./images/youtube.png" alt="YouTube">
-                    </a>
-                </li>
-                <li class="button githubButton">
-                    <a href="https://github.com/LuanVictorGit" title="acessar github" target="_blank">
-                        <img class="imageButton" src="./images/github.png" alt="GitHub">
-                    </a>
-                </li>
-                <li class="button linkedinButton">
-                    <a href="https://www.linkedin.com/in/luanvictorchagas/" title="acessar linkedin" target="_blank">
-                        <img class="imageButton" src="./images/linkedin.png" alt="LinkedIn">
-                    </a>
-                </li>
-                <li class="button contactButton">
-                    <a href="mailto:luanvictorchagas2015@gmail.com" title="acessar email" target="_blank">
-                        <img class="imageButton" src="./images/email.png" alt="Email">
-                    </a>
-                </li>
-                <li class="button discordButton">
-                    <a href="https://discord.gg/tNP6C8FRV2" title="acessar servidor discord" target="_blank">
-                        <img class="imageButton" src="./images/discord.png" alt="Discord">
-                    </a>
-                </li>
-                <li class="button whatsappButton">
-                    <a href="https://wa.me/62985305035?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20pessoal%2C%20gostaria%20de%20te%20conhecer%20melhor!" title="acessar whatsapp" target="_blank">
-                        <img class="imageButton" src="./images/whatsapp.png" alt="Whatsapp">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Luan Victor | Desenvolvedor FullStack & Freelancer | Criação de Websites e
+      SaaS
+    </title>
+    <meta
+      name="description"
+      content="Portfólio de Luan Victor - Desenvolvedor FullStack especializado em criar websites personalizados, aplicações SaaS e automações. Soluções sob medida para seu negócio."
+    />
+    <meta
+      name="keywords"
+      content="Desenvolvedor FullStack, Freelancer, Websites personalizados, SaaS, Aplicações web, JavaScript, Node.js, Java, Spring Boot, Javalin, JavaPlugin, MySQL, Portfólio desenvolvedor"
+    />
+    <meta name="author" content="Luan Victor Mariano Chagas" />
+    <meta
+      property="og:title"
+      content="Luan Victor | Desenvolvedor FullStack & Freelancer"
+    />
+    <meta
+      property="og:description"
+      content="Criação de websites personalizados, aplicações SaaS e automações para seu negócio."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#3b82f6" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Roboto", "sans-serif"],
+              heading: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                500: "#0078ff",
+                600: "#0061cf",
+              },
+              dark: {
+                800: "#1e293b",
+                900: "#0f172a",
+              },
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "fade-in": "fadeIn 1s ease-in",
+              roullete: "roullete 3s ease-in-out infinite",
+              roulleteTop: "roulleteTop 3s ease infinite",
+              slideUp: "slideUp 0.5s ease-in-out",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              roullete: {
+                "0%": { transform: "translateY(-2%)" },
+                "50%": { transform: "translateY(2%)" },
+                "100%": { transform: "translateY(-2%)" },
+              },
+              roulleteTop: {
+                "0%": { transform: "translateY(2%)" },
+                "50%": { transform: "translateY(-2%)" },
+                "100%": { transform: "translateY(2%)" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(100%)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .glassmorphism {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .text-gradient {
+          @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
+        }
+        .btn-primary {
+          @apply bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg px-5 py-2.5 transition-all duration-300 flex items-center justify-center gap-2;
+        }
+        .btn-outline {
+          @apply border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white font-medium rounded-lg px-5 py-2.5 transition-all duration-300 flex items-center justify-center gap-2;
+        }
+        .tech-icon {
+          @apply w-16 h-16 p-3 bg-white/10 rounded-xl flex flex-col items-center justify-center gap-1 hover:scale-105 transition-all duration-300;
+        }
+        .project-card {
+          @apply rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+        }
+        .typing-cursor {
+          @apply border-r-2 border-r-primary-500 pr-1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-dark-900 text-gray-800 dark:text-gray-200 font-sans min-h-screen flex flex-col"
+  >
+    <!-- Header Fixo -->
+    <header
+      class="fixed w-full z-50 bg-white/80 dark:bg-dark-900/80 backdrop-blur-sm shadow-sm"
+    >
+      <nav
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="flex items-center gap-2 group"
+          title="Voltar ao início"
+        >
+          <span
+            class="text-2xl font-heading font-bold text-gradient group-hover:opacity-80 transition"
+            >LuanDev</span
+          >
+          <span class="text-primary-500 animate-pulse">↑</span>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <!-- Botões de redes sociais -->
+          <a
+            href="https://github.com/LuanVictorGit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+            title="GitHub"
+          >
+            <i class="bx bxl-github text-2xl"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/luanvictorchagas/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+            title="LinkedIn"
+          >
+            <i class="bx bxl-linkedin-square text-2xl"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@luanvictor.mariano"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+            title="YouTube"
+          >
+            <i class="bx bxl-youtube text-2xl"></i>
+          </a>
+          <a
+            href="mailto:luanvictorchagas2015@gmail.com"
+            class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+            title="E-mail"
+          >
+            <i class="bx bx-envelope text-2xl"></i>
+          </a>
+          <a
+            href="https://wa.me/62985305035?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20pessoal%2C%20gostaria%20de%20te%20conhecer%20melhor!"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+            title="WhatsApp"
+          >
+            <i class="bx bxl-whatsapp text-2xl"></i>
+          </a>
+        </div>
+      </nav>
     </header>
-    <main>
-        <div class="containerIcon">
-            <div class="containerIconButtons">
-                <img id="iconPerf" src="./images/icon.png" alt="Imagem Perfil">
-                <div class="containerCV">
-                    <a id="buttonCV" href="./downloads/curriculo.pdf" download="CV_LuanDev.pdf" title="Baixar Currículo" target="_blank">
-                        <img src="./images/download_icon.png" alt="download">
-                        <p>Baixar CV</p>
-                    </a>
-                    <a id="buttonHabilitys" href="#projectsTitle" title="Ver Projetos">
-                        <img src="./images/codigo-html.png" alt="htmlcode">
-                        <p>Ver Projetos</p>
-                    </a>
-                </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow pt-20">
+      <!-- Seção Hero -->
+      <section class="container mx-auto px-4 py-12 md:py-24">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2 flex justify-center animate-fade-in">
+            <div class="relative">
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center animate-float"
+              >
+                <img
+                  src="images/icon.png"
+                  alt="Luan Victor"
+                  class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-white dark:border-gray-800"
+                />
+              </div>
+              <div
+                class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 flex gap-4"
+              >
+                <a href="#projects" class="btn-primary">
+                  <i class="bx bx-code-alt"></i> Projetos
+                </a>
+                <a
+                  href="downloads/curriculo.pdf"
+                  download="cv_LuanDev.pdf"
+                  class="btn-outline"
+                  id="downloadCv"
+                >
+                  <i class="bx bx-download"></i> Currículo
+                </a>
+              </div>
             </div>
-            <div class="container">
-                <h2>FullStack Developer</h2>
-                <p>Sou um desenvolvedor apaixonado por criar experiências digitais inovadoras, desde interfaces web intuitivas até aplicações SaaS avançadas e escaláveis. Atualmente, atuo como freelancer, desenvolvendo desde websites até automações personalizadas. Se precisar de um projeto sob medida, entre em contato!</p>
+          </div>
+
+          <div class="md:w-1/2 mt-12 md:mt-0">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+              Olá, eu sou <span class="text-gradient">Luan Victor</span>
+            </h1>
+            <h2
+              class="text-2xl md:text-3xl font-medium mb-6 text-gray-600 dark:text-gray-300 typing-cursor"
+              id="typing-title"
+            >
+              Desenvolvedor FullStack & Freelancer
+            </h2>
+            <p
+              class="text-lg mb-8 text-gray-700 dark:text-gray-300 leading-relaxed"
+            >
+              Sou um desenvolvedor apaixonado por criar experiências digitais
+              inovadoras, desde interfaces web intuitivas até aplicações SaaS
+              avançadas e escaláveis. Atualmente, atuo como freelancer,
+              desenvolvendo desde websites até automações personalizadas. Se
+              precisar de um projeto sob medida, entre em contato!
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#contact" class="btn-primary">
+                <i class="bx bx-chat"></i> Vamos conversar
+              </a>
+              <a href="#technologies" class="btn-outline">
+                <i class="bx bx-cog"></i> Tecnologias
+              </a>
             </div>
-            <div class="container">
-                <h2>Tecnologias Dominadas</h2>
-                <ul class="listLinguages">
-                    <li><img src="./images/html.png" alt="">html5</li>
-                    <li><img src="./images/css-3.png" alt="">css3</li>
-                    <li><img src="./images/js.png" alt="">javascript</li>
-                    <li><img src="./images/nodejs.png" alt="">nodejs</li>
-                    <li><img src="./images/java.png" alt="">java</li>
-                    <li><img src="./images/spring_boot.png" alt="">spring boot</li>
-                    <li><img src="./images/mysql-database.png" alt="">mysql</li>
-                </ul>
-            </div>
+          </div>
         </div>
-        <div id="projectsTitle"></div>
-        <div class="containerProjects">
-            <h2>Meus Projetos</h2>
-            <div id="projectsContainer"><p id="loadingProjects">carregando...</p></div>
+      </section>
+
+      <!-- Seção Tecnologias -->
+      <section id="technologies" class="py-16 bg-gray-100 dark:bg-dark-800">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-heading font-bold mb-4 typing-cursor"
+              id="technologies-title"
+            >
+              Tecnologias Dominadas
+            </h2>
+            <p
+              class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            >
+              Domínio completo do ciclo de desenvolvimento, desde o frontend até
+              o backend e banco de dados.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 justify-items-center"
+            id="technologies-list"
+          >
+            <div class="tech-icon animate-roullete">
+              <i class="bx bxl-html5 text-3xl text-orange-500"></i>
+              <span class="text-xs font-medium uppercase">HTML5</span>
+            </div>
+            <div class="tech-icon animate-roulleteTop">
+              <i class="bx bxl-css3 text-3xl text-blue-500"></i>
+              <span class="text-xs font-medium uppercase">CSS3</span>
+            </div>
+            <div class="tech-icon animate-roullete">
+              <i class="bx bxl-javascript text-3xl text-yellow-500"></i>
+              <span class="text-xs font-medium uppercase">JavaScript</span>
+            </div>
+            <div class="tech-icon animate-roulleteTop">
+              <i class="bx bxl-nodejs text-3xl text-green-500"></i>
+              <span class="text-xs font-medium uppercase">Node.js</span>
+            </div>
+            <div class="tech-icon animate-roullete">
+              <i class="bx bxl-java text-3xl text-red-500"></i>
+              <span class="text-xs font-medium uppercase">Java</span>
+            </div>
+            <div class="tech-icon animate-roulleteTop">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                class="w-6 h-6"
+                alt="Spring Boot"
+              />
+              <span class="text-xs font-medium uppercase">Spring Boot</span>
+            </div>
+            <div class="tech-icon animate-roullete">
+              <img
+                src="https://javalin.io/img/logo.svg"
+                class="w-6 h-6"
+                alt="Javalin"
+              />
+              <span class="text-xs font-medium uppercase">Javalin</span>
+            </div>
+            <div class="tech-icon animate-roulleteTop">
+              <img
+                src="https://www.spigotmc.org/favicon.ico"
+                class="w-6 h-6"
+                alt="JavaPlugin"
+              />
+              <span class="text-xs font-medium uppercase">JavaPlugin</span>
+            </div>
+            <div class="tech-icon animate-roullete">
+              <i class="bx bxs-data text-3xl text-blue-400"></i>
+              <span class="text-xs font-medium uppercase">MySQL</span>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- Seção Projetos -->
+      <section id="projects" class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-heading font-bold mb-4 typing-cursor"
+              id="projects-title"
+            >
+              Meus Projetos
+            </h2>
+            <p
+              class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            >
+              Alguns dos meus trabalhos mais recentes e projetos pessoais.
+            </p>
+          </div>
+
+          <div
+            id="projectsContainer"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Projetos serão carregados via JavaScript -->
+            <div class="text-center py-8">
+              <div
+                class="animate-spin inline-block w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full"
+              ></div>
+              <p class="mt-4">Carregando projetos...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Contato -->
+      <section id="contact" class="py-16 bg-gray-100 dark:bg-dark-800">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2
+              class="text-3xl md:text-4xl font-heading font-bold mb-4 typing-cursor"
+            >
+              Vamos trabalhar juntos!
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+              Estou disponível para oportunidades freelancer e projetos
+              desafiadores. Entre em contato para discutirmos sua ideia.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6">
+              <a
+                href="mailto:luanvictorchagas2015@gmail.com"
+                class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-md transition-shadow"
+              >
+                <i class="bx bx-envelope text-primary-500 text-xl"></i>
+                <span>E-mail</span>
+              </a>
+              <a
+                href="https://wa.me/62985305035?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20pessoal%2C%20gostaria%20de%20te%20conhecer%20melhor!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-md transition-shadow"
+              >
+                <i class="bx bxl-whatsapp text-green-500 text-xl"></i>
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/luanvictorchagas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-md transition-shadow"
+              >
+                <i class="bx bxl-linkedin text-blue-600 text-xl"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
-        <p>© 2025 luan victor mariano chagas.</p>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-gray-300 py-6">
+      <div class="container mx-auto px-4 text-center">
+        <p>
+          © 2025
+          <span class="text-primary-400">Luan Victor Mariano Chagas</span>.
+          Todos os direitos reservados.
+        </p>
+        <p class="mt-2 text-sm">Desenvolvido com ❤️ e código limpo</p>
+      </div>
     </footer>
-    <script src="./scripts/index.js"></script>
-</body>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        // Efeito de digitação para títulos
+        const typingSpeed = 60;
+        const eraseSpeed = 30;
+        const pauseBeforeErase = 250;
+        const pauseAfterTyping = 3000;
+
+        function typeAndErase(element, text, initialDelay) {
+          setTimeout(() => {
+            typeText(element, text, 0);
+          }, initialDelay);
+        }
+
+        function typeText(element, text, currentLength) {
+          if (currentLength < text.length) {
+            element.textContent += text[currentLength];
+            setTimeout(() => {
+              typeText(element, text, currentLength + 1);
+            }, typingSpeed);
+          } else {
+            setTimeout(() => {
+              eraseText(element, text);
+            }, pauseAfterTyping);
+          }
+        }
+
+        function eraseText(element, text) {
+          if (element.textContent.length > 0) {
+            element.textContent = element.textContent.slice(0, -1);
+            setTimeout(() => {
+              eraseText(element, text);
+            }, eraseSpeed);
+          } else {
+            setTimeout(() => {
+              typeText(element, text, 0);
+            }, pauseBeforeErase);
+          }
+        }
+
+        // Aplicar efeito de digitação nos títulos
+        const titles = document.querySelectorAll(".typing-cursor");
+        titles.forEach((title, index) => {
+          const text = title.textContent.trim();
+          title.textContent = "";
+          typeAndErase(title, text, index * 800);
+        });
+
+        // Carregar projetos do GitHub
+        const projectsContainer = document.getElementById("projectsContainer");
+
+        try {
+          const response = await fetch(
+            "https://api.github.com/users/LuanVictorGit/repos"
+          );
+          if (!response.ok) throw new Error(`Erro: ${response.status}`);
+          const data = await response.json();
+
+          // Ordenar por data de atualização
+          data.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+
+          projectsContainer.innerHTML = "";
+
+          data.forEach((project) => {
+            const projectElement = document.createElement("div");
+            projectElement.className = "project-card animate-slideUp";
+            projectElement.innerHTML = `
+                        <a href="${
+                          project.html_url
+                        }" target="_blank" rel="noopener noreferrer">
+                            <div class="h-48 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                                <i class='bx bx-code-block text-6xl text-gray-400'></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-heading font-semibold mb-2">${
+                                  project.name
+                                }</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">${
+                                  project.description ||
+                                  "Sem descrição disponível"
+                                }</p>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                    <i class='bx bx-calendar mr-1'></i>
+                                    <span>Atualizado em ${new Date(
+                                      project.pushed_at
+                                    ).toLocaleDateString()}</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+            projectsContainer.appendChild(projectElement);
+          });
+        } catch (error) {
+          projectsContainer.innerHTML = `
+                    <div class="col-span-3 text-center py-8 text-red-500">
+                        <i class='bx bx-error-circle text-4xl mb-2'></i>
+                        <p>Não foi possível carregar os projetos. Por favor, tente novamente mais tarde.</p>
+                    </div>
+                `;
+          console.error("Erro ao carregar projetos:", error);
+        }
+
+        // Efeito de scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Animação de entrada para elementos
+        const animateElements = () => {
+          const elements = document.querySelectorAll("*");
+          let delay = 0.1;
+
+          for (let element of elements) {
+            if (element.style.animation) continue;
+
+            // Aplicar apenas a elementos visíveis
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              element.style.animation = `slideUp ${delay}s ease-in-out`;
+              delay += 0.05;
+            }
+          }
+        };
+
+        // Executar na carga inicial
+        animateElements();
+
+        // Executar no scroll
+        window.addEventListener("scroll", animateElements);
+
+        // Dark mode toggle (opcional)
+        const darkModeToggle = document.createElement("button");
+        darkModeToggle.className =
+          "fixed bottom-4 right-4 w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 shadow-lg flex items-center justify-center z-50";
+        darkModeToggle.innerHTML =
+          '<i class="bx bx-moon text-xl dark:hidden"></i><i class="bx bx-sun text-xl hidden dark:block"></i>';
+        darkModeToggle.title = "Alternar tema claro/escuro";
+        document.body.appendChild(darkModeToggle);
+
+        darkModeToggle.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "darkMode",
+            document.documentElement.classList.contains("dark")
+          );
+        });
+
+        // Verificar preferência de tema do usuário
+        if (
+          localStorage.getItem("darkMode") === "true" ||
+          (!localStorage.getItem("darkMode") &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+
+        // Scroll para o topo após 1s
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 1000);
+      });
+    </script>
+  </body>
 </html>
