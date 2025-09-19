@@ -551,29 +551,6 @@
           });
         });
 
-        // Animação de entrada para elementos
-        const animateElements = () => {
-          const elements = document.querySelectorAll("*");
-          let delay = 0.1;
-
-          for (let element of elements) {
-            if (element.style.animation) continue;
-
-            // Aplicar apenas a elementos visíveis
-            const rect = element.getBoundingClientRect();
-            if (rect.top < window.innerHeight) {
-              element.style.animation = `slideUp ${delay}s ease-in-out`;
-              delay += 0.05;
-            }
-          }
-        };
-
-        // Executar na carga inicial
-        animateElements();
-
-        // Executar no scroll
-        window.addEventListener("scroll", animateElements);
-
         // Dark mode toggle (opcional)
         const darkModeToggle = document.createElement("button");
         darkModeToggle.className =
@@ -603,7 +580,7 @@
         // Scroll para o topo após 1s
         setTimeout(() => {
           window.scrollTo(0, 0);
-        }, 1000);
+        }, 500);
       });
     </script>
   </body>
