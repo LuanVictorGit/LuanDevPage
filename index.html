@@ -71,6 +71,52 @@
         .modal {
             transition: opacity 0.3s ease-in-out;
         }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 192px;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel img.active {
+            opacity: 1;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
     </style>
 </head>
 <body class="block-pattern min-h-screen">
@@ -177,27 +223,42 @@
     </footer>
 
     <script>
-        // Project data structure
+        // Project data structure with multiple images
         const projectData = {
             plugins: [
                 {
+                    title: "OdyForger | 1.21.4",
+                    description: "Plugin created for a client to allow forging item(s) through a minigame.",
+                    images: [
+                        "https://i9.ytimg.com/vi/CTlQdzECpWk/mqdefault.jpg?sqp=CMCV7MYG-oaymwEmCMACELQB8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGFQgVyhlMA8=&rs=AOn4CLB2L-p-OPKWPjguoaMND3i_jduysA"
+                    ],
+                    video: "CTlQdzECpWk",
+                    externalLink: "https://www.spigotmc.org/resources/%E2%AD%90chunkpregenerator-1-8-1-21-%E2%AD%90-efficient-chunk-generation-with-high-performance.129047/"
+                },
+                {
                     title: "ChunkPreGenerator | 1.8 - 1.21",
                     description: "Eliminate Lag Spikes with Intelligent Chunk Pre-generation, ChunkPreGenerator is perfect for you!",
-                    image: "https://www.spigotmc.org/data/resource_icons/129/129047.jpg?1758748295",
+                    images: [
+                        "https://www.spigotmc.org/data/resource_icons/129/129047.jpg?1758748295"
+                    ],
                     video: "",
                     externalLink: "https://www.spigotmc.org/resources/%E2%AD%90chunkpregenerator-1-8-1-21-%E2%AD%90-efficient-chunk-generation-with-high-performance.129047/"
                 },
                 {
                     title: "AntiBlink | 1.8",
                     description: "Mainly used if you want to prevent players from using lag simulation to see others teleport.",
-                    image: "https://www.spigotmc.org/data/resource_icons/129/129078.jpg?1758824637",
+                    images: [
+                        "https://www.spigotmc.org/data/resource_icons/129/129078.jpg?1758824637"
+                    ],
                     video: "_Ji72_6H79Q",
                     externalLink: "https://www.spigotmc.org/resources/%E2%AD%90-antiblink-1-8-%E2%9A%A1-protect-your-server-from-blink-cheat-a-lag-simulation-used-to-escape-pvp.129078/"
                 },
                 {
                     title: "Mine Creation",
                     description: "Demo I made while developing a mines plugin for a client.",
-                    image: "https://i9.ytimg.com/vi/cAAONfJQfUE/mqdefault.jpg?sqp=COjF68YG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYACpgWKAgwIABABGGsgayhrMA8=&rs=AOn4CLBV-Jl012JGs1RWHQlUeIXODU__SA",
+                    images: [
+                        "https://i9.ytimg.com/vi/cAAONfJQfUE/mqdefault.jpg?sqp=COjF68YG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYACpgWKAgwIABABGGsgayhrMA8=&rs=AOn4CLBV-Jl012JGs1RWHQlUeIXODU__SA"
+                    ],
                     video: "cAAONfJQfUE",
                     externalLink: null
                 }
@@ -206,8 +267,12 @@
                 {
                     title: "DiovBot",
                     description: "Bot created for a client for ticket creation and management.",
-                    image: "https://ik.imagekit.io/d69r9igub/Screenshot_1.jpg?updatedAt=1759176930096",
-                    video: "",
+                    images: [
+                        "https://ik.imagekit.io/d69r9igub/Screenshot_1.jpg?updatedAt=1759176930096",
+                        "https://ik.imagekit.io/d69r9igub/Screenshot_2.jpg?updatedAt=1759186763301",
+                        "https://ik.imagekit.io/d69r9igub/Screenshot_3.jpg?updatedAt=1759186763413"
+                    ],
+                    video: "frLR_f1Eotk",
                     externalLink: null
                 }
             ],
@@ -215,21 +280,27 @@
                 {
                     title: "DoceEncanto",
                     description: "Platform created for a client who sells sweets.",
-                    image: "https://doceencanto.angatusistemas.com.br/images/icon.png",
+                    images: [
+                        "https://doceencanto.angatusistemas.com.br/images/icon.png"
+                    ],
                     video: "",
                     externalLink: "https://doceencanto.angatusistemas.com.br/"
                 },
                 {
                     title: "Angatu Sistemas",
                     description: "Page created for my company Angatu Sistemas, also using TailwindCSS.",
-                    image: "https://angatusistemas.com.br/images/icon.png",
+                    images: [
+                        "https://angatusistemas.com.br/images/icon.png"
+                    ],
                     video: "",
                     externalLink: "https://angatusistemas.com.br/"
                 },
                 {
                     title: "Pegadas Pré-Moldados",
                     description: "Page I developed for a precast concrete company.",
-                    image: "https://ppm.angatusistemas.com.br/images/icon.jpg",
+                    images: [
+                        "https://ppm.angatusistemas.com.br/images/icon.jpg"
+                    ],
                     video: "",
                     externalLink: "https://ppm.angatusistemas.com.br/"
                 }
@@ -242,12 +313,21 @@
             document.getElementById('player-skin').src = skinUrl;
         }
 
-        // Create project card
+        // Create project card with carousel
         function createProjectCard(project) {
+            const carouselId = `carousel-${project.title.replace(/\s+/g, '-')}`;
             return `
                 <div class="bg-gray-800 bg-opacity-70 rounded-lg overflow-hidden card-hover transition-all duration-300 fade-in">
                     <div class="relative">
-                        <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+                        <div class="carousel" id="${carouselId}">
+                            ${project.images.map((img, index) => `
+                                <img src="${img}" alt="${project.title} ${index + 1}" class="${index === 0 ? 'active' : ''}">
+                            `).join('')}
+                            ${project.images.length > 1 ? `
+                                <button class="carousel-btn prev" data-carousel="${carouselId}"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-btn next" data-carousel="${carouselId}"><i class="fas fa-chevron-right"></i></button>
+                            ` : ''}
+                        </div>
                         ${project.video ? `<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
                             <i class="fas fa-play-circle text-4xl text-white cursor-pointer hover:text-green-400 transition duration-300 play-icon" data-video="${project.video}" aria-label="Play video"></i>
                         </div>` : ''}
@@ -277,8 +357,39 @@
             projects.forEach((project, index) => {
                 setTimeout(() => {
                     container.insertAdjacentHTML('beforeend', createProjectCard(project));
+                    setupCarousel(`carousel-${project.title.replace(/\s+/g, '-')}`);
                 }, index * 100);
             });
+        }
+
+        // Setup carousel functionality
+        function setupCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                });
+            }
+
+            const prevBtn = carousel.querySelector('.carousel-btn.prev');
+            const nextBtn = carousel.querySelector('.carousel-btn.next');
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showImage(currentIndex);
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showImage(currentIndex);
+                });
+            }
         }
 
         // Tab switching functionality
